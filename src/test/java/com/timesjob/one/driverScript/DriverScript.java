@@ -62,7 +62,7 @@ public static void launch(File folder,String execute,String browser,String url,i
 	}
 }
 
-
+//code for registration
 public static void register(File folder,String execute,String emailId,
 		String password,String confirmpassword,String mobileno,String jobfunction,
 		String exp_years,String exp_months,String currentLocation,int rownum,int columnnum) throws Exception
