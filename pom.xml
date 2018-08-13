@@ -4,41 +4,56 @@
   <artifactId>TimesjobsFramework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Maven_Timesjobs</name>
+ 
+  <properties>
+  	<selenium-jar-version>2.53.1</selenium-jar-version>
+  	<testng-jar-version>6.11</testng-jar-version>
+  	<apache-poi-version>3.17</apache-poi-version>
+  	<surefire-version>2.18.1</surefire-version>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>${surefire-version}</version>
+			<configuration>
+				<forkCount>0</forkCount>
+				<suiteXmlFiles>
+					<suiteXmlFile>testng.xml</suiteXmlFile>
+				</suiteXmlFiles>
+			</configuration>
+		</plugin>
+  	</plugins>
+  </build>
+  
   <dependencies>
-  
-  <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>3.12.0</version>
-    </dependency>  
-    
-    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-<dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi</artifactId>
-    <version>3.7</version>
-</dependency>
-
-<dependency>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>2.21.0</version>
-</dependency>
-
-<dependency>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-compiler-plugin</artifactId>
-  <version>3.7.0</version>
-  <type>maven-plugin</type>
-</dependency>
-
-<dependency>
-  <groupId>org.testng</groupId>
-  <artifactId>testng</artifactId>
-  <version>6.8</version>
-  <scope>test</scope>
-</dependency>
-
-  
+   	<!-- Selenium Dependency -->
+  	<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version>${selenium-jar-version}</version>
+	</dependency>
+	<!-- TestNG Dependency -->
+	<dependency>
+		<groupId>org.testng</groupId>
+		<artifactId>testng</artifactId>
+		<version>${testng-jar-version}</version>
+	</dependency>
+  	<!-- Apache POI Dependency -->
+  	<dependency>
+    	<groupId>org.apache.poi</groupId>
+    	<artifactId>poi</artifactId>
+    	<version>${apache-poi-version}</version>
+	</dependency>
+  	<dependency>
+    	<groupId>org.apache.poi</groupId>
+    	<artifactId>poi-ooxml</artifactId>
+    	<version>${apache-poi-version}</version>
+	</dependency>
+  	
   </dependencies>
 </project>

@@ -153,7 +153,7 @@ public static void login(File folder,String execute,String emailId,String passwo
 	if (execute.equals("Y")) 
 	{	
 		try{
-	driver.findElement(By.xpath("//a[contains(.,'Login')]")).click();
+	driver.findElement(By.xpath("//a[(text()='Login')]")).click();
 	Thread.sleep(5000);
 	//NewFrame("GB_frame1", driver);
 	//Thread.sleep(5000);
