@@ -70,7 +70,7 @@ public static void register(File folder,String execute,String emailId,
 	if (execute.equals("Y")) 
 	{	
 		try{			
-				driver.findElement(By.xpath("//a[contains(.,'Sign In')]/parent::li/following-sibling::li[1]")).click();
+				driver.findElement(By.xpath("//a[contains(.,'Login')]/parent::li/following-sibling::li[1]/a")).click();
 				driver.findElement(By.id("emailAdd")).sendKeys(emailId);
 				driver.findElement(By.id("passwordField")).sendKeys(password);
 				driver.findElement(By.id("retypePassword")).sendKeys(confirmpassword);
@@ -153,7 +153,7 @@ public static void login(File folder,String execute,String emailId,String passwo
 	if (execute.equals("Y")) 
 	{	
 		try{
-	driver.findElement(By.xpath("//a[contains(.,'Sign In')]")).click();
+	driver.findElement(By.xpath("//a[contains(.,'Login')]")).click();
 	Thread.sleep(5000);
 	//NewFrame("GB_frame1", driver);
 	//Thread.sleep(5000);
@@ -161,7 +161,7 @@ public static void login(File folder,String execute,String emailId,String passwo
 	Thread.sleep(2000);
 	driver.findElement(By.id("j_username")).sendKeys(emailId);
 	driver.findElement(By.id("j_password")).sendKeys(password);
-	driver.findElement(By.xpath("//input[contains(@value,'SIGN IN')]")).click();
+	driver.findElement(By.xpath("//input[contains(@value,'Login') and (@type='button')]")).click();
 	Thread.sleep(5000);
 	if(driver.findElements(By.xpath("//b[contains(.,'Upload your resume')]")).size() != 0)
 	{
